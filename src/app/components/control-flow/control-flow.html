@@ -1,0 +1,70 @@
+<table>
+    <tr>
+        <td>
+            @if (isParagraphVisible === true) 
+            {
+                <p>Sample Paragraph</p>
+            } @else {
+                <p>Else Sample Paragraph</p>
+            }
+        </td>
+        <td>
+            <button (click)="showParagraph()">Show Paragraph</button>
+        </td>
+        <td>
+            <button (click)="hideParagraph()">Hide Paragraph</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @if (startMonthName == "jan") {
+                <span>January</span>
+            } @else if (startMonthName == "feb") {
+                <span>February</span>
+            } @else {
+                <span>Wrong Month Name</span>
+            }
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="startMonthName">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <ul>
+                @for (item of cityList; track $index) {
+                    <li>{{item}}</li>
+                }
+            </ul>
+        </td>
+    </tr>
+</table>
+
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>Serial Number</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of studentList; track $index) {
+            <tr>
+                <td>{{$index}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.city}}</td>
+                <td>
+                    @if (item.isActive == true) 
+                    {
+                        Active
+                    } @else {
+                        Inactive
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

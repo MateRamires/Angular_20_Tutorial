@@ -1,0 +1,45 @@
+<table style="width: 100%;">
+
+    <tr>
+        <td>
+            Course Name: {{courseName}}
+        </td>
+        <td>
+            Course Price: R$ {{productPrice}} 
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <input type="text" value="{{courseName}}">
+        </td>
+        <td>
+            <input [type]="inputType" [maxLength]="maxChars" [minLength]="minChar">
+        </td>
+        <td>
+            <p [class]="myCssClassName">Testing myColor Class with Data Binding.</p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <button (click)="showEventTestMessage()">Test Angular Event Binding</button>
+        </td>
+        <td>
+            <button (click)="changeCourseName()">Change Course's Name</button>
+        </td>
+        <td>
+            <select (change)="onSelectChange()" name="" id="">
+                <option value="">Test 1</option>
+                <option value="">Test 2</option>
+                <option value="">Test 3</option>
+            </select>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <input type="text" [(ngModel)]="courseName">     
+        </td>
+    </tr>
+</table>
