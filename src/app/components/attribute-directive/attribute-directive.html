@@ -20,3 +20,16 @@
         <button class="btn btn-success" (click)="toggleDiv2Color()">Toggle BG Color</button>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-3">
+        First Name => {{firstName}}
+        <br>
+        First Name using uppercase Pipe => {{firstName | uppercase}}
+    </div>
+    <div class="col-3">
+        Student's Object => {{studentObject}}
+        <br>
+        Student's Object using JSON Pipe => {{studentObject | json}}
+    </div>
+</div>

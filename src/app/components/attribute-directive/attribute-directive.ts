@@ -1,13 +1,19 @@
-import { NgClass, NgStyle } from '@angular/common';
+import { JsonPipe, NgClass, NgStyle, UpperCasePipe } from '@angular/common';
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, OnDestroy, OnInit, signal } from '@angular/core';
 
 @Component({
   selector: 'app-attribute-directive',
-  imports: [NgClass, NgStyle],
+  imports: [NgClass, NgStyle, UpperCasePipe, JsonPipe],
   templateUrl: './attribute-directive.html',
   styleUrl: './attribute-directive.css',
 })
-export class AttributeDirective implements OnInit, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy{
+export class AttributeDirective implements OnInit, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
+
+  //The two variables below are used to test Pipes.
+  firstName: string = "Matheus";
+  studentObject: any = { name: 'Matheus', city: "Mogi das Cruzes", state: "Sao Paulo"};
+  //There are many other pipes available, the most used one is the Date Pipe. All pipes are available on Angular Docs.
+
   div1ClassName = signal<string>("");
   isDiv2Green: boolean = false;
 
