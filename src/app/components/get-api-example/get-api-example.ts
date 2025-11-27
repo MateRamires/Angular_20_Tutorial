@@ -15,7 +15,6 @@ export class GetApiExample implements OnInit {
   ngOnInit(): void {
     this.getUsers();
   }
-
   
   getUsers() {
     this.http.get("https://jsonplaceholder.typicode.com/users").subscribe((result:any) => {

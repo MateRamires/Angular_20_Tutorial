@@ -8,7 +8,7 @@ import { GetApiExample } from './components/get-api-example/get-api-example';
 
 export const routes: Routes = [
     {
-        path: "user",
+        path: "users",
         component: User
     },
     {
