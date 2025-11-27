@@ -41,4 +41,46 @@ export class User implements OnInit {
       }
     });
   }
+
+  onEdit(user: any) {
+    this.userObject = user;
+  }
+
+  onUpdateUser(){
+    this.http.put("URLPutendpoint?id=" + this.userObject.userId, this.userObject).subscribe({
+      next: (result) => {
+        alert("User updated succesfully.");
+        this.getUsers();
+      },
+      error: (error) => {
+        alert("Error - " + error.error);
+      }
+    });
+  }
+
+  onReset() {
+    this.userObject = {
+      "userId": 0,
+      "emailId": "",
+      "password": "",
+      "fullName": "",
+      "mobileNo": ""
+    }
+  }
+
+  onDeleteUser(userId: number) {
+    const doDelete = confirm("Are you sure want to delete?");
+    if (doDelete) {
+      this.http.delete("URLDeleteEndpoint?id=" + userId).subscribe({
+        next: (result) => {
+          
+          alert("User Deleted succesfully.");
+          this.getUsers();
+        },
+        error: (error) => {
+          alert("Error - " + error.error);
+        }
+      });
+    }
+  }
 }
