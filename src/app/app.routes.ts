@@ -5,6 +5,7 @@ import { DataBinding } from './components/data-binding/data-binding';
 import { SignalExample } from './components/signal-example/signal-example';
 import { AttributeDirective } from './components/attribute-directive/attribute-directive';
 import { GetApiExample } from './components/get-api-example/get-api-example';
+import { ReactiveUserForm } from './components/reactive-user-form/reactive-user-form';
 
 export const routes: Routes = [
     {
@@ -30,5 +31,9 @@ export const routes: Routes = [
     {
         path: "get-api",
         component: GetApiExample
+    },
+    {
+        path: "user-reactive",
+        component: ReactiveUserForm
     },
 ];
