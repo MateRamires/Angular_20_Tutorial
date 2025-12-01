@@ -18,7 +18,7 @@ export class ReactiveUserForm {
 
   userForm: FormGroup = new FormGroup({
     userId: new FormControl(0),
-    emailId: new FormControl("", [Validators.required]),
+    emailId: new FormControl("", [Validators.required, Validators.email]),
     password: new FormControl("", [Validators.required, Validators.minLength(4)]),
     fullName: new FormControl(""),
     mobileNo: new FormControl("")

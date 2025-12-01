@@ -53,6 +53,9 @@
                                     @if(userForm.controls['emailId'].errors?.['required']) {
                                         <span>This field is required!</span>
                                     }
+                                    @if(userForm.controls['emailId'].errors?.['email']) {
+                                        <span>This email is invalid!</span>
+                                    }
                                 </div>
                             }
                         </div>
