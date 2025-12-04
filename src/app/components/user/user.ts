@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Master } from '../../services/master';
 
 @Component({
   selector: 'app-user',
@@ -10,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class User implements OnInit {
   http = inject(HttpClient);
+  masterService = inject(Master);
 
   userList: any[] = [];
   userObject: any = {
@@ -22,12 +24,19 @@ export class User implements OnInit {
 
   ngOnInit(): void {
     this.getUsers();
+
+    const result = this.masterService.getSum(12,50);
+    const appName = this.masterService.appName;
   }
 
   getUsers() {
-    this.http.get("URLGetendpoint").subscribe((result: any) => {
+    /*this.http.get("URLGetendpoint").subscribe((result: any) => {
       this.userList = result;
-    });
+    });*/
+
+    this.masterService.getUsers().subscribe((res:any) => {
+      this.userList = res;
+    })
   }
 
   onSaveUser() {
