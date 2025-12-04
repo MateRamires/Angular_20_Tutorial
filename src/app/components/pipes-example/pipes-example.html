@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-3">
+        <p>Raw variable -> {{courseName}}</p>
+        <p>After uppercase Pipe -> {{courseName | uppercase}}</p>
+        <p>After lowercase Pipe -> {{courseDuration | lowercase}}</p>
+        <p>After title Pipe -> {{courseDuration | titlecase}}</p>
+    </div>
+    <div class="col-3">
+        <p>Raw Date variable -> {{currentDate}}</p>
+        <p>After Date Pipe -> {{currentDate | date}}</p>
+        <p>After Date Pipe -> {{currentDate | date:'dd-MM-yyyy'}}</p>
+        <p>After Date Pipe -> {{currentDate | date:'dd/MM/yy'}}</p>
+        <p>After Date Pipe -> {{currentDate | date:'dd-MMM-yy'}}</p>
+    </div>
+    <div class="col-3">
+        <p>Raw list -> {{rollNumberList}}</p>
+        <p>First two elements (Slice Pipe) -> {{rollNumberList | slice:0:2}}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-4">
+        <p>Raw Object -> {{studentObj}}</p>
+        <p>Object with JSON Pipe (useful for debug) -> {{studentObj | json}}</p>
+    </div>
+    <div class="col-4">
+        <p>Student's Name (Custom Pipe) -> {{studentObj.name | exPipe}}</p>
+        <p>Student's Email (Custom Pipe) -> {{studentObj.email | exPipe}}</p>
+    </div>
+</div>

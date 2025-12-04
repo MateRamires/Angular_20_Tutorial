@@ -6,6 +6,7 @@ import { SignalExample } from './components/signal-example/signal-example';
 import { AttributeDirective } from './components/attribute-directive/attribute-directive';
 import { GetApiExample } from './components/get-api-example/get-api-example';
 import { ReactiveUserForm } from './components/reactive-user-form/reactive-user-form';
+import { PipesExample } from './components/pipes-example/pipes-example';
 
 export const routes: Routes = [
     {
@@ -35,5 +36,9 @@ export const routes: Routes = [
     {
         path: "user-reactive",
         component: ReactiveUserForm
+    },
+    {
+        path: "pipes-example",
+        component: PipesExample
     },
 ];
