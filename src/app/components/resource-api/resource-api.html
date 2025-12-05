@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-4">
+        @if(userData.hasValue()) {
+            {{userData}}
+        }
+    </div>
+    <div class="col-4">
+        <ul>
+            @for(item of userData.value(); track $index) {
+                <li>{{item.username}}</li>
+            }
+        </ul>
+    </div>
+    <div class="col-4">
+        <ul>
+            @for(item of userList.value(); track $index) {
+                <li>{{item.username}}</li>
+            }
+        </ul>
+    </div>
+</div>
