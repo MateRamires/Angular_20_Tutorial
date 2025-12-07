@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Master } from '../../services/master';
 
 @Component({
   selector: 'app-login',
@@ -15,11 +16,13 @@ export class Login {
   };
 
   router = inject(Router);
+  masterService = inject(Master);
 
   onLogin() {
     if(this.loginObj.username == "user" && this.loginObj.password == "123") {
       this.router.navigateByUrl("/users");
       localStorage.setItem("Angular20User", "User");
+      this.masterService.onLogin.next(true);
     } else {
       alert("Wrong Credentials!");
     }

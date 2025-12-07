@@ -9,46 +9,58 @@ import { ReactiveUserForm } from './components/reactive-user-form/reactive-user-
 import { PipesExample } from './components/pipes-example/pipes-example';
 import { ResourceApi } from './components/resource-api/resource-api';
 import { Login } from './components/login/login';
+import { Layout } from './components/layout/layout';
 
 export const routes: Routes = [
     {
-        path: "users",
-        component: User
-    },
-    {
-        path: "control-flow",
-        component: ControlFlow
-    },
-    {
-        path: "data-binding",
-        component: DataBinding
-    },
-    {
-        path: "signal",
-        component: SignalExample
-    },
-    {
-        path: "attribute-dir",
-        component: AttributeDirective
-    },
-    {
-        path: "get-api",
-        component: GetApiExample
-    },
-    {
-        path: "user-reactive",
-        component: ReactiveUserForm
-    },
-    {
-        path: "pipes-example",
-        component: PipesExample
-    },
-    {
-        path: "resource-api",
-        component: ResourceApi
+        path:'',
+        redirectTo: 'login',
+        pathMatch: 'full'
     },
     {
         path: "login",
         component: Login
+    },
+    {
+        path:'',
+        component: Layout,
+        children: [ 
+            {
+                path: "users",
+                component: User
+            },
+            {
+                path: "control-flow",
+                component: ControlFlow
+            },
+            {
+                path: "data-binding",
+                component: DataBinding
+            },
+            {
+                path: "signal",
+                component: SignalExample
+            },
+            {
+                path: "attribute-dir",
+                component: AttributeDirective
+            },
+            {
+                path: "get-api",
+                component: GetApiExample
+            },
+            {
+                path: "user-reactive",
+                component: ReactiveUserForm
+            },
+            {
+                path: "pipes-example",
+                component: PipesExample
+            },
+            {
+                path: "resource-api",
+                component: ResourceApi
+            },
+        ]
     },
 ];

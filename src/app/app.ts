@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { ControlFlow } from './components/control-flow/control-flow';
+import { Master } from './services/master';
 
 @Component({
   selector: 'app-root',
@@ -10,13 +11,4 @@ import { ControlFlow } from './components/control-flow/control-flow';
 })
 export class App {
   protected readonly title = signal('angular20Tutorial');
-  loggedUserName: string = "";
-
-  constructor() {
-    const loggedData = localStorage.getItem("Angular20User"); 
-
-    if(loggedData != null) {
-      this.loggedUserName = loggedData;
-    }
-  }  
 }
